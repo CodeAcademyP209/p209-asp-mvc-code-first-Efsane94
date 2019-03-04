@@ -1,0 +1,54 @@
+﻿@model IEnumerable<RentACarProject.Models.Car>
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<h2>Rent a Car</h2>
+<a href="Home/Create" class="btn btn-primary">Create New</a>
+<div class="container">
+    @foreach (var car in Model)
+    {
+    <div class="row" style="display:inline-block; margin:0px;">
+        <div class="col-sm-4" style="border:1px solid #e5e5e5; padding:-5px; width:100%; height:450px; margin:10px 7px;">
+            <div class="card">
+                <img class="card-img-top" src="~/Images/@(car.Image !=null ? "Cars/"+car.Image : "no_image.png")" alt="Card image cap" style="width:300px; height:200px; margin-top:5px;">
+                <div class="card-body">
+                    <h5 class="card-title" style="font-weight:bold; font-size:18px;">Marka:@car.Brand</h5>
+                    <p>
+                        <span style="font-weight:bold; font-size:17px;">Model: </span>
+                        <span style="font-weight:500; font-size:18px;">@car.Model</span>
+                    </p>
+                    <p>
+                        <span style="font-weight:bold; font-size:17px;">Mühərrik Gücü: </span>
+                        <span style="font-size:16px">@car.HorsePower</span>
+                    </p>
+                    <p>
+                        <span style="font-weight:bold; font-size:17px;">Mühərrik Tipi: </span>
+                        <span style="font-size:16px">@car.MotorType</span>
+                    </p>
+                    <p>
+                        <span style="font-weight:bold; font-size:17px;">Mühərrik Həcmi: </span>
+                        <span style="font-size:16px">@car.EngineVolume</span>
+                    </p>
+                    <p>
+                        <span style="font-weight:bold; font-size:17px;">Buraxılış: </span>
+                        <span style="font-size:16px">@car.DateOfProduction</span>
+                    </p>
+                    <p>
+                        <span style="font-weight:bold; font-size:17px;">Yürüş: </span>
+                        <span style="font-size:16px">@car.AmountOfMarch</span>
+                    </p>
+
+
+                    @*<p class="card-text">Model:@car.Model</p>
+        <p class="card-text">Muherrikin Gucu:@car.HorsePower</p>
+        <p class="card-text">Muherrikin Tipi:@car.MotorType</p>
+        <p class="card-text">Muherrikin Hecmi:@car.EngineVolume</p>
+        <p class="card-text">Buraxilis Ili:@car.DateOfProduction</p>
+        <p class="card-text">Yurus:@car.AmountOfMarch</p>*@
+                </div>
+            </div>
+        </div>
+    </div>
+        }
+    </div>

@@ -1,0 +1,59 @@
+﻿@model RentACarProject.Models.Car
+@{
+    ViewBag.Title = "Create";
+}
+
+<form method="post" enctype="multipart/form-data">
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Brand)
+        @Html.TextBoxFor(m => m.Brand, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Brand, null, new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Model)
+        @Html.TextBoxFor(m => m.Model, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Model, null, new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.MotorType)
+        @Html.TextBoxFor(m => m.MotorType, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.MotorType, null, new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.HorsePower)
+        @Html.TextBoxFor(m => m.HorsePower, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.HorsePower, null, new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.EngineVolume)
+        @Html.TextBoxFor(m => m.EngineVolume, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.EngineVolume, null, new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.AmountOfMarch)
+        @Html.TextBoxFor(m => m.AmountOfMarch, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.AmountOfMarch, null, new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.DateOfProduction)
+        @Html.TextBoxFor(m => m.DateOfProduction, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.DateOfProduction, null, new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Image)
+        @Html.TextBoxFor(m => m.Image, new { @class = "form-control", type = "file" })
+    </div>
+
+    <input type="submit" class="btn btn-success" value="Create" />
+</form>
+
+

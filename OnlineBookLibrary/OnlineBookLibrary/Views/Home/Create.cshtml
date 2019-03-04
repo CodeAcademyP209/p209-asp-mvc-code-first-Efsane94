@@ -1,0 +1,40 @@
+﻿@model OnlineBookLibrary.Models.Book
+@{
+    ViewBag.Title = "Create";
+}
+
+<form method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        @Html.LabelFor(m => m.Name)
+        @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Name, null, new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Price)
+        @Html.TextBoxFor(m => m.Price, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Price, null, new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Author)
+        @Html.TextBoxFor(m => m.Author, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Author, null, new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Image)
+        @Html.TextBoxFor(m => m.Image, new { @class = "form-control", type = "file" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Details)
+        @Html.TextAreaFor(m => m.Details, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Details, null, new { @class = "text-danger" })
+    </div>
+
+    <input type="submit" class="btn btn-success" value="Create Book" />
+</form>
+
+
+

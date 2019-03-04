@@ -1,0 +1,20 @@
+﻿@model OnlineBookLibrary.Models.BookDetails
+@{
+    ViewBag.Title = "Details";
+}
+<div class="container">
+    <div class="col-md-7" style="border:1px solid #e5e5e5; height:auto; margin:0px 5px;">
+        <div class="card" style="width:600px; margin-top:20px;">
+            <img class="card-img-top" src="~/Images/@(Model.book.Image !=null ?  "Books/" +Model.book.Image : "no_image.png")" alt="Card image" style="width:600px; height:300px;">
+            <div class="card-body">
+                <h4 class="card-title" style="font-weight:bold">Book Name: @Model.book.Name</h4>
+                <p class="card-text" maxlength="200" style="overflow:hidden">@Model.book.Details</p>
+                <p style="font-weight:600">Author: @Model.book.Author</p>
+                <p style="font-weight:600">@Model.book.Price AZN</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
